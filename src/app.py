@@ -64,17 +64,14 @@ def update_family_member(member_id):
     return jsonify({"done": "Miembro actualizado"}), 200
 
  
-
+#OBTENER UN FAMILIAR POR ID
 
 @app.route('/member/<int:member_id>', methods=['GET'])
 def get_one_member(member_id):
-    return jsonify("hola")
-
-
-
- 
-
-
+    miembro_encontrado = jackson_family.get_member(member_id)
+    if not miembro_encontrado:
+        return jsonify({"mensaje": "No se encontro al miembro de la familia"}), 400
+    return jsonify(miembro_encontrado), 200
 
 
 # this only runs if `$ python src/app.py` is executed
