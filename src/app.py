@@ -31,7 +31,7 @@ def sitemap():
 def handle_hello():
     members = jackson_family.get_all_members()
     response_body = {
-        "miembros": members
+        "members": members
     }
     return jsonify(response_body), 200
 
