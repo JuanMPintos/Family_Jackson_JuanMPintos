@@ -50,7 +50,7 @@ def delete_family_member(member_id):
     eliminar_familiar = jackson_family.delete_member(member_id)
     if not eliminar_familiar:
         return jsonify({"mensaje": "familiar no encontrado"}), 400 
-    return jsonify({"done": "familiar borrado"}), 200
+    return jsonify({"done": "familiar borrado..."}), 200
 
 
 #ACTUALIZAR FAMILIA
