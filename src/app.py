@@ -30,10 +30,7 @@ def sitemap():
 @app.route('/members', methods=['GET'])
 def handle_hello():
     members = jackson_family.get_all_members()
-    response_body = {
-        "members": members
-    }
-    return jsonify(response_body), 200
+    return jsonify(members), 200
 
 #CREAR FAMILIAR
 
@@ -50,7 +47,7 @@ def delete_family_member(member_id):
     eliminar_familiar = jackson_family.delete_member(member_id)
     if not eliminar_familiar:
         return jsonify({"mensaje": "familiar no encontrado"}), 400 
-    return jsonify({"done": "familiar borrado..."}), 200
+    return jsonify({"done": True}), 200
 
 
 #ACTUALIZAR FAMILIA
